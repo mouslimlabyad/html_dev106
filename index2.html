@@ -7,14 +7,11 @@
     <meta name="description" content="Portfolio de Mouslim Labyad — Développeur Web spécialisé en PHP, SQL, HTML, CSS et Bootstrap. Découvrez mes projets et compétences." />
     <meta name="author" content="Mouslim Labyad" />
     <title>Mouslim Labyad — Portfolio | DEV-106</title>
-    
-    <!-- Polices Google Fonts -->
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     
     <style>
-        /* ═══════════════════════════════════════
-           VARIABLES & RESET CSS
-           ═══════════════════════════════════════ */
+
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -62,9 +59,7 @@
             cursor: none;
         }
 
-        /* ═══════════════════════════════════════
-           SCROLLBAR & CURSEUR
-           ═══════════════════════════════════════ */
+
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--bg2); }
         ::-webkit-scrollbar-thumb { background: var(--ac); border-radius: 10px; }
@@ -85,9 +80,7 @@
         .cursor-dot.hover { width: 14px; height: 14px; background: var(--cyan); }
         .cursor-ring.hover { width: 55px; height: 55px; border-color: var(--cyan); opacity: .3; }
 
-        /* ═══════════════════════════════════════
-           [NOUVEAU] PRELOADER PREMIUM
-           ═══════════════════════════════════════ */
+
         #preloader {
             position: fixed; inset: 0; z-index: 99999; background: var(--bg);
             display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 30px;
@@ -128,10 +121,6 @@
         }
         .preloader-percent span { color: var(--ac2); font-weight: 700; }
 
-        /* ═══════════════════════════════════════
-           [NOUVEAU] HERO INTRO OVERLAY
-           Cinematic entrance for "• HELLO DEV 106"
-           ═══════════════════════════════════════ */
         #hero-intro {
             position: fixed; inset: 0; z-index: 9998; background: var(--bg);
             display: flex; align-items: center; justify-content: center; flex-direction: column;
@@ -158,7 +147,7 @@
             transition: all 1s cubic-bezier(.77, 0, .175, 1);
         }
 
-        /* Neon glow effect */
+
         .hero-intro-text .neon-glow {
             background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 20px var(--glow)) drop-shadow(0 0 40px rgba(108, 92, 231, .3));
@@ -169,7 +158,7 @@
             50% { filter: drop-shadow(0 0 30px var(--glow)) drop-shadow(0 0 60px rgba(108, 92, 231, .5)) drop-shadow(0 0 80px rgba(0, 206, 201, .2)); }
         }
 
-        /* Shimmer effect */
+   
         .hero-intro-text .shimmer {
             position: relative; display: inline-block;
             background: linear-gradient(
@@ -185,7 +174,6 @@
             100% { background-position: -200% center; }
         }
 
-        /* Floating animation */
         .hero-intro-text.float {
             animation: introFloat 3s ease-in-out infinite;
         }
@@ -203,9 +191,7 @@
         }
         .hero-intro-sub.animate { opacity: 1; transform: translateY(0); }
 
-        /* ═══════════════════════════════════════
-           [NOUVEAU] ANIMATED GRID BACKGROUND
-           ═══════════════════════════════════════ */
+
         .bg-grid {
             position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
         }
@@ -222,7 +208,6 @@
             100% { transform: translate(60px, 60px); }
         }
 
-        /* Floating code symbols */
         .bg-code-symbols {
             position: absolute; inset: 0; overflow: hidden;
         }
@@ -238,7 +223,6 @@
             100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
         }
 
-        /* Gradient orbs */
         .bg-orb {
             position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none;
             animation: orbFloat 15s ease-in-out infinite;
@@ -264,9 +248,6 @@
             66% { transform: translate(-20px, 20px) scale(.9); }
         }
 
-        /* ═══════════════════════════════════════
-           LOADER & CANVAS PARTICULES
-           ═══════════════════════════════════════ */
         #loader {
             position: fixed; inset: 0; z-index: 9999; background: var(--bg); display: flex;
             align-items: center; justify-content: center; flex-direction: column; gap: 24px;
@@ -293,9 +274,6 @@
             position: fixed; inset: 0; z-index: 0; pointer-events: none;
         }
 
-        /* ═══════════════════════════════════════
-           NAVIGATION
-           ═══════════════════════════════════════ */
         .navbar {
             position: fixed; top: 0; left: 0; right: 0; height: var(--nav); display: flex;
             align-items: center; justify-content: space-between; padding: 0 40px; z-index: 1000;
@@ -332,9 +310,6 @@
             max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;
         }
 
-        /* ═══════════════════════════════════════
-           HERO SECTION
-           ═══════════════════════════════════════ */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             padding-top: var(--nav); position: relative; overflow: hidden;
@@ -344,7 +319,6 @@
         }
         .hero-photo-wrapper { position: relative; flex-shrink: 0; }
 
-        /* [NOUVEAU] Premium floating animation for profile image */
         .hero-photo-frame {
             width: 320px; height: 320px; border-radius: 50%; position: relative; overflow: hidden;
             opacity: 0; transform: scale(.6) rotate(-15deg);
@@ -363,7 +337,6 @@
             75% { transform: translateY(-14px) rotate(.5deg); }
         }
 
-        /* [NOUVEAU] Soft glow behind profile image */
         .hero-photo-frame::before {
             content: ''; position: absolute; inset: -4px; border-radius: 50%; background: var(--grad);
             z-index: -1; animation: rg 4s linear infinite;
@@ -389,7 +362,6 @@
             border: 4px solid var(--bg);
             transition: transform .5s cubic-bezier(.34, 1.56, .64, 1);
         }
-        /* [NOUVEAU] Hover effects on profile image */
         .hero-photo-wrapper:hover .hero-photo {
             transform: scale(1.08) rotate(3deg);
         }
@@ -419,7 +391,6 @@
         }
         @keyframes bk { 50% { opacity: 0; } }
 
-        /* [NOUVEAU] Premium animated gradient heading */
         .hero-name {
             font-family: var(--fh); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;
             margin-bottom: 20px; opacity: 0; transform: translateY(30px);
@@ -446,7 +417,6 @@
         .hero-cta { display: flex; gap: 16px; opacity: 0; transform: translateY(20px); }
         .hero-cta.visible { opacity: 1; transform: translateY(0); transition: all .6s ease 1.2s; }
 
-        /* [NOUVEAU] Social Icons Section */
         .hero-social {
             display: flex; gap: 16px; margin-top: 32px;
             opacity: 0; transform: translateY(20px);
@@ -474,7 +444,6 @@
         .social-icon:hover svg { transform: scale(1.1); }
         .social-icon:active { transform: translateY(-2px) scale(.95); }
 
-        /* Tooltip */
         .social-icon::after {
             content: attr(data-tooltip);
             position: absolute; bottom: -32px; left: 50%; transform: translateX(-50%) translateY(5px);
@@ -488,7 +457,6 @@
             opacity: 1; transform: translateX(-50%) translateY(0);
         }
 
-        /* Bounce animation on hover */
         .social-icon.bounce {
             animation: socialBounce .5s cubic-bezier(.34, 1.56, .64, 1);
         }
@@ -500,9 +468,6 @@
             100% { transform: scale(1); }
         }
 
-        /* ═══════════════════════════════════════
-           [AMÉLIORÉ] BOUTONS PREMIUM
-           ═══════════════════════════════════════ */
         .btn {
             display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 60px;
             font-family: var(--fb); font-size: .95rem; font-weight: 600; text-decoration: none; cursor: none;
@@ -544,7 +509,6 @@
             transition: all .1s;
         }
 
-        /* Ripple effect */
         .ripple-effect {
             position: absolute; border-radius: 50%;
             background: rgba(255, 255, 255, .3);
@@ -555,9 +519,7 @@
             to { transform: scale(4); opacity: 0; }
         }
 
-        /* ═══════════════════════════════════════
-           TITRES DES SECTIONS
-           ═══════════════════════════════════════ */
+
         .section-header { text-align: center; margin-bottom: 64px; }
         .section-label {
             font-family: var(--fm); font-size: .85rem; color: var(--ac);
@@ -567,7 +529,6 @@
             font-family: var(--fh); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
             margin-bottom: 16px; letter-spacing: -0.5px;
         }
-        /* [NOUVEAU] Animated gradient for section titles */
         .section-title .title-grad {
             background: var(--grad2); background-size: 300% 300%;
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -575,11 +536,8 @@
         }
         .section-divider { width: 60px; height: 4px; background: var(--grad); border-radius: 4px; margin: 0 auto; }
 
-        /* ═══════════════════════════════════════
-           SKILLS SECTION
-           ═══════════════════════════════════════ */
+
         .skills { padding: 100px 0; position: relative; }
-        /* [MODIFIÉ] Grille adaptée pour 8 compétences */
         .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
         .skill-card {
             background: var(--card); border: 1px solid var(--br); border-radius: var(--rad); padding: 36px 24px;
@@ -598,24 +556,21 @@
             width: 64px; height: 64px; margin: 0 auto 20px; border-radius: var(--rad-s); display: flex; align-items: center; justify-content: center;
             font-size: 1.6rem; background: var(--glass); border: 1px solid var(--br); position: relative;
         }
-        /* [MODIFIÉ] Couleurs des icônes - 8 compétences */
-        .skill-card:nth-child(1) .skill-icon { color: #777BB4; } /* PHP */
-        .skill-card:nth-child(2) .skill-icon { color: #00758F; } /* SQL */
-        .skill-card:nth-child(3) .skill-icon { color: #E34F26; } /* HTML5 */
-        .skill-card:nth-child(4) .skill-icon { color: #1572B6; } /* CSS3 */
-        .skill-card:nth-child(5) .skill-icon { color: #7952B3; } /* Bootstrap */
-        .skill-card:nth-child(6) .skill-icon { color: #3776AB; } /* Python */
-        .skill-card:nth-child(7) .skill-icon { color: #FFD43B; } /* POO Python */
-        .skill-card:nth-child(8) .skill-icon { color: #00cec9; } /* Algorithme */
+        .skill-card:nth-child(1) .skill-icon { color: #777BB4; }
+        .skill-card:nth-child(2) .skill-icon { color: #00758F; } 
+        .skill-card:nth-child(3) .skill-icon { color: #E34F26; }
+        .skill-card:nth-child(4) .skill-icon { color: #1572B6; } 
+        .skill-card:nth-child(5) .skill-icon { color: #7952B3; } 
+        .skill-card:nth-child(6) .skill-icon { color: #3776AB; } 
+        .skill-card:nth-child(7) .skill-icon { color: #FFD43B; } 
+        .skill-card:nth-child(8) .skill-icon { color: #00cec9; } 
 
         .skill-name { font-family: var(--fh); font-weight: 700; font-size: 1.1rem; margin-bottom: 14px; }
         .skill-bar-wrapper { width: 100%; height: 6px; background: var(--br); border-radius: 10px; overflow: hidden; margin-bottom: 8px; }
         .skill-bar { height: 100%; border-radius: 10px; background: var(--grad); width: 0; transition: width 1.2s cubic-bezier(.25, .46, .45, .94); }
         .skill-level { font-family: var(--fm); font-size: .8rem; color: var(--tx3); }
 
-        /* ═══════════════════════════════════════
-           PROJECTS SECTION
-           ═══════════════════════════════════════ */
+
         .projects { padding: 100px 0; position: relative; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto; }
         .project-card {
@@ -653,9 +608,6 @@
         .project-tech span { font-family: var(--fm); font-size: .75rem; color: var(--tx3); background: var(--glass); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--br); }
         .featured-badge { position: absolute; top: 16px; right: 16px; z-index: 2; font-family: var(--fm); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 5px 14px; border-radius: 30px; background: var(--grad); color: #fff; box-shadow: 0 4px 15px var(--glow); }
 
-        /* ═══════════════════════════════════════
-           CONTACT SECTION
-           ═══════════════════════════════════════ */
         .contact { padding: 100px 0; position: relative; }
         .contact-wrapper { max-width: 700px; margin: 0 auto; text-align: center; }
         .contact-text { font-size: 1.1rem; color: var(--tx2); margin-bottom: 40px; line-height: 1.8; }
@@ -691,15 +643,12 @@
         }
         .contact-btn svg { width: 20px; height: 20px; fill: currentColor; }
 
-        /* ═══════════════════════════════════════
-           FOOTER & ANIMATIONS GÉNÉRALES
-           ═══════════════════════════════════════ */
         .footer { padding: 40px 24px; text-align: center; border-top: 1px solid var(--br); position: relative; z-index: 1; }
         .footer-content { font-size: .88rem; color: var(--tx3); }
         .footer-heart { color: var(--pink); display: inline-block; animation: hb 1.5s ease-in-out infinite; }
         @keyframes hb { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
 
-        /* [NOUVEAU] Scroll reveal animations - multiple types */
+
         .reveal { opacity: 0; transform: translateY(40px); transition: opacity .7s, transform .7s; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -712,7 +661,6 @@
         .reveal-zoom { opacity: 0; transform: scale(.8); transition: opacity .7s, transform .7s; }
         .reveal-zoom.visible { opacity: 1; transform: scale(1); }
 
-        /* Stagger children */
         .stagger-children > * {
             opacity: 0; transform: translateY(30px);
             transition: opacity .5s, transform .5s;
@@ -726,9 +674,6 @@
         .stagger-children.visible > *:nth-child(7) { transition-delay: .6s; opacity: 1; transform: translateY(0); }
         .stagger-children.visible > *:nth-child(8) { transition-delay: .7s; opacity: 1; transform: translateY(0); }
 
-        /* ═══════════════════════════════════════
-           [NOUVEAU] REDUCED MOTION PREFERENCE
-           ═══════════════════════════════════════ */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -741,15 +686,13 @@
             .bg-orb { animation: none !important; }
         }
 
-        /* ═══════════════════════════════════════
-           RÉACTIVITÉ (RESPONSIVE DESIGN)
-           ═══════════════════════════════════════ */
+
         @media(max-width:1024px) {
             .hero-content { gap: 50px; }
             .hero-photo-frame { width: 260px; height: 260px; }
             .orbit-1 { width: 330px; height: 330px; }
             .orbit-2 { width: 400px; height: 400px; }
-            /* [MODIFIÉ] Grille compétences en 3 colonnes sur tablette */
+
             .skills-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
@@ -772,7 +715,6 @@
             .hero-cta { justify-content: center; }
             .hero-social { justify-content: center; }
             .projects-grid { grid-template-columns: 1fr; }
-            /* [MODIFIÉ] Grille compétences en 2 colonnes sur mobile */
             .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
             .contact-buttons { flex-direction: column; align-items: center; }
             .hero-intro-text { font-size: clamp(1.5rem, 8vw, 3rem); }
@@ -786,7 +728,6 @@
             .project-info { padding: 20px; }
             .btn, .contact-btn { padding: 12px 24px; font-size: .9rem; }
             .social-icon { width: 42px; height: 42px; }
-            /* [MODIFIÉ] Grille compétences en 2 colonnes sur très petit écran */
             .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .skill-card { padding: 24px 16px; }
         }
@@ -794,13 +735,10 @@
 </head>
 
 <body>
-    <!-- Curseur Personnalisé (Masqué sur mobile) -->
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
     
-    <!-- ═══════════════════════════════════════
-         [NOUVEAU] PRELOADER PREMIUM
-         ═══════════════════════════════════════ -->
+
     <div id="preloader">
         <div class="preloader-logo">MouslimLABYAD.</div>
         <div class="preloader-bar-container">
@@ -811,10 +749,7 @@
         </div>
     </div>
 
-    <!-- ═══════════════════════════════════════
-         [NOUVEAU] HERO INTRO OVERLAY
-         Cinematic "• HELLO DEV 106"
-         ═══════════════════════════════════════ -->
+
     <div id="hero-intro">
         <h1 class="hero-intro-text">
             <span class="neon-glow">•&nbsp;</span><span class="shimmer">HELLO DEV 106</span>
@@ -822,10 +757,7 @@
         <p class="hero-intro-sub">Portfolio — Mouslim Labyad</p>
     </div>
 
-    <!-- ═══════════════════════════════════════
-         [NOUVEAU] ANIMATED BACKGROUND
-         Grid + Code Symbols + Gradient Orbs
-         ═══════════════════════════════════════ -->
+
     <div class="bg-grid">
         <div class="bg-grid-lines"></div>
         <div class="bg-code-symbols" id="bg-code-symbols"></div>
@@ -834,10 +766,8 @@
         <div class="bg-orb bg-orb-3"></div>
     </div>
 
-    <!-- Fond animé de particules -->
     <canvas id="particles-canvas"></canvas>
 
-    <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="nav-logo">MouslimLABYAD.</div>
          <span class="neon-glow">•&nbsp;</span><span class="shimmer">HELLO DEV 106</span>
@@ -852,7 +782,6 @@
         </button>
     </nav>
 
-    <!-- SECTION 1: HERO -->
     <section id="hero" class="hero">
         <div class="hero-content">
             <div class="hero-photo-wrapper" data-parallax="0.05">
@@ -860,7 +789,6 @@
                 <div class="orbit orbit-1"><span class="orbit-dot"></span></div>
                 <div class="orbit orbit-2"><span class="orbit-dot"></span></div>
                 <div class="hero-photo-frame" id="hero-photo">
-                    <!-- TON IMAGE ICI -->
                     <img class="hero-photo" src="WhatsApp Image 2026-07-02 at 17.22.15.jpeg" alt="Mouslim Labyad" />
                 </div>
             </div>
@@ -878,7 +806,6 @@
                     <a href="#projects" class="btn btn-primary">Voir mes projets</a>
                     <a href="#contact" class="btn btn-outline">Me contacter</a>
                 </div>
-                <!-- [NOUVEAU] Social Icons -->
                 <div class="hero-social" id="hero-social">
                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-icon" data-tooltip="GitHub" aria-label="GitHub">
                         <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -894,7 +821,7 @@
         </div>
     </section>
 
-    <!-- SECTION 2: COMPÉTENCES -->
+    
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header reveal-zoom">
@@ -903,9 +830,7 @@
                 <div class="section-divider"></div>
             </div>
             
-            <!-- [MODIFIÉ] Grille avec 8 compétences maintenant -->
             <div class="skills-grid stagger-children">
-                <!-- PHP -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.866 1.55zm5.791-1.35c-.06.307-.233.757-.519 1.349l-.903 1.903h-1.31l.839-1.78c-.07.018-.152.027-.25.027h-.95l-.345 1.753H8.724l1.23-6.326h2.65c.798 0 1.378.209 1.744.628.367.418.477 1.002.331 1.752a2.94 2.94 0 0 1-.148.694zm5.354-.063c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164h-1.18l-.327 1.681h-1.378l1.23-6.326h2.649c.798 0 1.379.209 1.744.628.367.418.477 1.002.331 1.752a2.836 2.836 0 0 1-.867 1.55zM11.08 10.207h-.944l-.515 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.522-.29-1.047-.29zm7.11 0h-.944l-.514 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.125-.995-.175-.193-.522-.29-1.047-.29z"/></svg>
@@ -916,7 +841,6 @@
                     </div>
                     <span class="skill-level">90%</span>
                 </div>
-                <!-- SQL -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4zm0 2c4.42 0 8 1.49 8 3s-3.58 3-8 3-8-1.49-8-3 3.58-3 8-3zM4 18V15.87c1.73 1.02 4.68 1.63 8 1.63s6.27-.61 8-1.63V18c0 1.1-3.58 2.5-8 2.5S4 19.1 4 18zm0-5v-2.13c1.73 1.02 4.68 1.63 8 1.63s6.27-.61 8-1.63V13c0 1.1-3.58 2.5-8 2.5S4 14.1 4 13zm0-5V6.5C5.73 7.52 8.68 8.13 12 8.13s6.27-.61 8-1.63V8c0 1.1-3.58 2.5-8 2.5S4 9.1 4 8z"/></svg>
@@ -927,7 +851,6 @@
                     </div>
                     <span class="skill-level">85%</span>
                 </div>
-                <!-- HTML5 -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.076-.757.076-.771.076-.758H6.792l.227 2.716.024.255h7.064l-.303 3.394-1.809.504-1.823-.504-.121-1.361h-2.7l.237 2.669L12 14.014l3.604-1.014.446-5.25z"/></svg>
@@ -938,7 +861,6 @@
                     </div>
                     <span class="skill-level">95%</span>
                 </div>
-                <!-- CSS3 -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.002l5.355-1.12.83-9.086.075-.806z"/></svg>
@@ -949,7 +871,6 @@
                     </div>
                     <span class="skill-level">90%</span>
                 </div>
-                <!-- Bootstrap -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218C24 18.075 18.075 24 12.608 24H0V0h12.608C18.075 0 24 5.925 24 12.608v-1.218zM19.68 12.5c0-1.573-.834-2.726-2.206-3.05v-.038c1.135-.392 1.768-1.42 1.768-2.655 0-2.032-1.554-3.36-4.07-3.36H7.508v13.206h7.977c2.684 0 4.195-1.474 4.195-4.103z"/></svg>
@@ -961,9 +882,6 @@
                     <span class="skill-level">80%</span>
                 </div>
 
-                <!-- ═══════════════════════════════════════
-                     [NOUVEAU] PYTHON — Logo officiel Python
-                     ═══════════════════════════════════════ -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
@@ -978,9 +896,7 @@
                     <span class="skill-level">100%</span>
                 </div>
 
-                <!-- ═══════════════════════════════════════
-                     [NOUVEAU] POO PYTHON — Programmation Orientée Objet
-                     ═══════════════════════════════════════ -->
+
                 <div class="skill-card">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
@@ -1000,9 +916,6 @@
                     <span class="skill-level">100%</span>
                 </div>
 
-                <!-- ═══════════════════════════════════════
-                     [NOUVEAU] ALGORITHME — Symbole de flux/logique
-                     ═══════════════════════════════════════ -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1024,7 +937,6 @@
         </div>
     </section>
 
-    <!-- SECTION 3: PROJETS -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header reveal-zoom">
@@ -1034,7 +946,7 @@
             </div>
             
             <div class="projects-grid">
-                <!-- Projet 1 -->
+
                 <div class="project-card reveal-left">
                     <span class="featured-badge">★ En vedette</span>
                     <div class="project-thumbnail">
@@ -1056,7 +968,6 @@
                     </div>
                 </div>
 
-                <!-- Projet 2 -->
                 <div class="project-card reveal-right">
                     <div class="project-thumbnail">
                         <div class="project-thumbnail-pattern"></div>
@@ -1080,7 +991,6 @@
         </div>
     </section>
 
-    <!-- SECTION 4: CONTACT -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header reveal-zoom">
@@ -1108,21 +1018,15 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <p class="footer-content">
             © 2026 Mouslim Labyad. Tous droits réservés. <span class="footer-heart">♥</span>
         </p>
     </footer>
 
-    <!-- ═══════════════════════════════════════
-         JAVASCRIPT — Logique et Animations Premium
-         ═══════════════════════════════════════ -->
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // ═══════════════════════════════════════
-            // ÉLÉMENTS DOM
-            // ═══════════════════════════════════════
+
             const preloader = document.getElementById('preloader');
             const preloaderBar = document.getElementById('preloader-bar');
             const preloaderPercent = document.getElementById('preloader-percent');
@@ -1142,9 +1046,7 @@
             let ringX = mouseX;
             let ringY = mouseY;
 
-            // ═══════════════════════════════════════
-            // [NOUVEAU] PRELOADER PREMIUM avec pourcentage
-            // ═══════════════════════════════════════
+
             let loadProgress = 0;
             const preloaderInterval = setInterval(() => {
                 loadProgress += Math.random() * 15 + 5;
@@ -1160,28 +1062,22 @@
                 preloaderPercent.textContent = Math.floor(loadProgress);
             }, 200);
 
-            // ═══════════════════════════════════════
-            // [NOUVEAU] HERO INTRO — Cinematic "• HELLO DEV 106"
-            // ═══════════════════════════════════════
+      
             function startHeroIntro() {
                 heroIntro.classList.add('active');
                 
-                // Phase 1: Fade in + scale up
                 setTimeout(() => {
                     heroIntroText.classList.add('animate');
                 }, 300);
 
-                // Phase 2: Subtitle appears
                 setTimeout(() => {
                     heroIntroSub.classList.add('animate');
                 }, 1000);
 
-                // Phase 3: Floating + shimmer effect
                 setTimeout(() => {
                     heroIntroText.classList.add('float');
                 }, 2000);
 
-                // Phase 4: Shrink and fade out
                 setTimeout(() => {
                     heroIntroText.classList.remove('float');
                     heroIntroText.classList.add('shrink');
@@ -1189,7 +1085,6 @@
                     heroIntroSub.style.transform = 'translateY(-20px)';
                 }, 4500);
 
-                // Phase 5: Hide intro, reveal main site
                 setTimeout(() => {
                     heroIntro.classList.add('fade-out');
                     navbar.classList.add('visible');
@@ -1197,9 +1092,7 @@
                 }, 5500);
             }
 
-            // ═══════════════════════════════════════
-            // [NOUVEAU] ANIMATED GRID BACKGROUND — Code Symbols
-            // ═══════════════════════════════════════
+  
             const codeSymbolsContainer = document.getElementById('bg-code-symbols');
             const symbols = ['{ }', '< />', '( )', '[ ]', '01', '&&', '||', '=>', '::', '!=', '++', '--', '/**/', '#!', '<?', '?>', 'fn', 'if', 'el'];
             
@@ -1214,22 +1107,17 @@
                 sym.style.opacity = Math.random() * 0.08 + 0.02;
                 codeSymbolsContainer.appendChild(sym);
 
-                // Remove after animation
                 setTimeout(() => {
                     if (sym.parentNode) sym.remove();
                 }, 30000);
             }
 
-            // Create initial symbols
             for (let i = 0; i < 15; i++) {
                 setTimeout(createCodeSymbol, i * 800);
             }
-            // Continuously add symbols
             setInterval(createCodeSymbol, 3000);
 
-            // ═══════════════════════════════════════
-            // CUSTOM CURSOR
-            // ═══════════════════════════════════════
+ 
             document.addEventListener('mousemove', e => {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
@@ -1250,7 +1138,6 @@
             }
             animateCursor();
 
-            // Hover effects on cursor
             document.querySelectorAll('a, button, .btn, .contact-btn, .project-card, .skill-card, .social-icon').forEach(el => {
                 el.addEventListener('mouseenter', () => {
                     cursorDot?.classList.add('hover');
@@ -1262,9 +1149,7 @@
                 });
             });
 
-            // ═══════════════════════════════════════
-            // [NOUVEAU] MOUSE PARALLAX on Hero elements
-            // ═══════════════════════════════════════
+
             const heroSection = document.querySelector('.hero');
             const parallaxElements = document.querySelectorAll('[data-parallax]');
 
@@ -1289,9 +1174,7 @@
                 });
             });
 
-            // ═══════════════════════════════════════
-            // PARTICLES BACKGROUND
-            // ═══════════════════════════════════════
+
             let particles = [];
             const PC = 70;
             const CD = 130;
@@ -1366,10 +1249,6 @@
             }
             animateParticles();
 
-            // ═══════════════════════════════════════
-            // [MODIFIÉ] SEQUENTIAL HERO ANIMATIONS
-            // After intro finishes, reveal elements one by one
-            // ═══════════════════════════════════════
             function triggerHeroAnimations() {
                 const greeting = document.getElementById('hero-greeting');
                 const name = document.getElementById('hero-name');
@@ -1378,25 +1257,19 @@
                 const cta = document.getElementById('hero-cta');
                 const social = document.getElementById('hero-social');
 
-                // 1. Name first
                 setTimeout(() => name?.classList.add('visible'), 200);
 
-                // 2. Profile image
                 setTimeout(() => photo?.classList.add('visible'), 600);
 
-                // 3. Subtitle
                 setTimeout(() => subtitle?.classList.add('visible'), 1000);
 
-                // 4. Description (greeting with typing)
                 setTimeout(() => {
                     greeting?.classList.add('visible');
                     typeText(document.getElementById('typed-greeting'), 'Bienvenue sur mon portfolio', 50);
                 }, 1400);
 
-                // 5. CTA buttons
                 setTimeout(() => cta?.classList.add('visible'), 1900);
 
-                // 6. Social icons
                 setTimeout(() => social?.classList.add('visible'), 2300);
             }
 
@@ -1411,17 +1284,13 @@
                 }, speed);
             }
 
-            // ═══════════════════════════════════════
-            // [NOUVEAU] SCROLL ANIMATIONS — Multiple types
-            // fade-up, fade-left, fade-right, zoom, stagger
-            // ═══════════════════════════════════════
+
             const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
 
             const revealObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        // Animate skill bars when skill cards become visible
                         if (entry.target.classList.contains('skill-card')) {
                             const bar = entry.target.querySelector('.skill-bar');
                             if (bar) {
@@ -1433,14 +1302,11 @@
                 });
             }, observerOptions);
 
-            // Observe all reveal elements
             document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .stagger-children, .skill-card, .project-card').forEach(el => {
                 revealObserver.observe(el);
             });
 
-            // ═══════════════════════════════════════
-            // 3D Tilt Effect for Skill Cards
-            // ═══════════════════════════════════════
+
             document.querySelectorAll('.skill-card').forEach(card => {
                 card.addEventListener('mousemove', e => {
                     const rect = card.getBoundingClientRect();
@@ -1466,13 +1332,11 @@
                 });
             });
 
-            // ═══════════════════════════════════════
-            // [NOUVEAU] SOCIAL ICONS — Bounce on hover
-            // ═══════════════════════════════════════
+      
             document.querySelectorAll('.social-icon').forEach(icon => {
                 icon.addEventListener('mouseenter', () => {
                     icon.classList.remove('bounce');
-                    void icon.offsetWidth; // Force reflow
+                    void icon.offsetWidth;
                     icon.classList.add('bounce');
                 });
                 icon.addEventListener('animationend', () => {
@@ -1480,9 +1344,7 @@
                 });
             });
 
-            // ═══════════════════════════════════════
-            // [AMÉLIORÉ] BUTTON RIPPLE EFFECT
-            // ═══════════════════════════════════════
+
             document.querySelectorAll('.btn, .contact-btn').forEach(btn => {
                 btn.addEventListener('click', function (e) {
                     const rect = this.getBoundingClientRect();
@@ -1497,9 +1359,7 @@
                 });
             });
 
-            // ═══════════════════════════════════════
-            // NAVIGATION & SCROLL EFFECTS
-            // ═══════════════════════════════════════
+
             navToggle?.addEventListener('click', () => {
                 navToggle.classList.toggle('active');
                 navLinks.classList.toggle('active');
@@ -1512,14 +1372,12 @@
                 });
             });
 
-            // Navbar background on scroll
             window.addEventListener('scroll', () => {
                 if (navbar.classList.contains('visible')) {
                     navbar.style.background = window.scrollY > 50 ? 'rgba(10,10,15,.92)' : 'rgba(10,10,15,.7)';
                 }
             });
 
-            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -1528,17 +1386,13 @@
                 });
             });
 
-            // ═══════════════════════════════════════
-            // [NOUVEAU] REDUCED MOTION CHECK
-            // ═══════════════════════════════════════
+
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
             if (prefersReducedMotion.matches) {
-                // Disable heavy animations
                 document.querySelectorAll('.code-symbol').forEach(s => s.remove());
                 if (heroIntro) heroIntro.style.display = 'none';
                 if (preloader) preloader.style.display = 'none';
                 navbar?.classList.add('visible');
-                // Reveal everything immediately
                 document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .stagger-children, .skill-card, .project-card, .hero-photo-frame, .hero-name, .hero-subtitle, .hero-cta, .hero-social, .hero-greeting').forEach(el => {
                     el.classList.add('visible');
                 });
